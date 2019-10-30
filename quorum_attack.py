@@ -46,4 +46,4 @@ probability = 10 ** (log(temp, 10)-log(numb, 10))
 if probability < 1:
     print("Probabilty of malicious ChainLock with {} out of {} Byzantine nodes: {}".format(attacking_nodes, mns, 10 ** (log(temp, 10)-log(numb, 10))))
 else:
-    print("Probability of malicious ChainLock 100% for all values > {}".format(i))
+    print("Probability of malicious ChainLock 100% for all values > {}".format(attacking_nodes))
