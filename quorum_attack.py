@@ -3,17 +3,6 @@ from decimal import Decimal
 from math import log
 from math import factorial as fac
 
-def binom_orig(n, m):
-    b = [0] * (n + 1)
-    b[0] = 1
-    for i in range(1, n + 1):
-        b[i] = 1
-        j = i - 1
-        while j > 0:
-            b[j] += b[j - 1]
-            j -= 1
-    return b[m]
-
 def binom(x, y):
     try:
         binom = fac(x) // fac(y) // fac(x - y)
@@ -44,10 +33,6 @@ temp2 = 0
 for x in range(qmaj, qsz+1):
     #print("\nNumber of LLMQs with {} Byzantine nodes:".format(x))
     temp = temp + binom(attacking_nodes, x) * binom(mns - attacking_nodes, qsz - x)
-    #temp2 = temp2 + binom_orig(y, x) * binom_orig(mns-y, qsz -x)
-    #if temp != temp2:
-    #    print("!!!!!!!!!!!!!!!! ERRROR !!!!!!!!!!!!!!!!!!!!!!!!")
-    #    print("\n{}\n{}\n".format(temp, temp2))
     #print("\tB: {}".format(binom(y, x) * binom(mns-y, qsz-x)))
     #print("\n\ttemp: {}".format(temp))
 
@@ -62,4 +47,3 @@ if probability < 1:
     print("Probabilty of malicious ChainLock with {} out of {} Byzantine nodes: {}".format(attacking_nodes, mns, 10 ** (log(temp, 10)-log(numb, 10))))
 else:
     print("Probability of malicious ChainLock 100% for all values > {}".format(i))
-
