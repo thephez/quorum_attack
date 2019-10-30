@@ -21,6 +21,9 @@ def binom(x, y):
         binom = 0
     return binom
 
+#Number of attacking nodes
+attacking_nodes = 3000
+
 #Total number of masternodes
 mns=5000
 #Quorum size used for ChainLocks
@@ -34,16 +37,13 @@ print("The number of masternodes in a quorum: {}".format(qsz))
 numb = binom(mns, qsz)
 #print("Total number of LLMQs: {}".format(numb))
 
-#Number of attacking nodes
-y = 400
-
 #print("Assume {} of MNs are Byzantine".format(y))
 temp = 0
 temp2 = 0
 
 for x in range(qmaj, qsz+1):
-    temp = temp + binom(y, x) * binom(mns-y, qsz -x)
     #print("\nNumber of LLMQs with {} Byzantine nodes:".format(x))
+    temp = temp + binom(attacking_nodes, x) * binom(mns - attacking_nodes, qsz - x)
     #temp2 = temp2 + binom_orig(y, x) * binom_orig(mns-y, qsz -x)
     #if temp != temp2:
     #    print("!!!!!!!!!!!!!!!! ERRROR !!!!!!!!!!!!!!!!!!!!!!!!")
