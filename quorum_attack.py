@@ -44,10 +44,10 @@ temp2 = 0
 for x in range(qmaj, qsz+1):
     print("\nNumber of LLMQs with {} Byzantine nodes:".format(x))
     temp = temp + binom(y, x) * binom(mns-y, qsz -x)
-    temp2 = temp2 + binom_orig(y, x) * binom_orig(mns-y, qsz -x)
-    if temp != temp2:
-        print("!!!!!!!!!!!!!!!! ERRROR !!!!!!!!!!!!!!!!!!!!!!!!")
-        print("\n{}\n{}\n".format(temp, temp2))
+    #temp2 = temp2 + binom_orig(y, x) * binom_orig(mns-y, qsz -x)
+    #if temp != temp2:
+    #    print("!!!!!!!!!!!!!!!! ERRROR !!!!!!!!!!!!!!!!!!!!!!!!")
+    #    print("\n{}\n{}\n".format(temp, temp2))
     #print("\tB: {}".format(binom(y, x) * binom(mns-y, qsz-x)))
     #print("\n\ttemp: {}".format(temp))
 
