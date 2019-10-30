@@ -26,9 +26,7 @@ print("The number of masternodes in a quorum: {}".format(qsz))
 numb = binom(mns, qsz)
 #print("Total number of LLMQs: {}".format(numb))
 
-#print("Assume {} of MNs are Byzantine".format(y))
 temp = 0
-temp2 = 0
 
 for x in range(qmaj, qsz + 1):
     #print("\nNumber of LLMQs with {} Byzantine nodes:".format(x))
@@ -36,7 +34,6 @@ for x in range(qmaj, qsz + 1):
     #print("\tB: {}".format(binom(y, x) * binom(mns-y, qsz-x)))
     #print("\n\ttemp: {}".format(temp))
 
-#print("{} malicious MNs (out of {} total MNs)".format(i, mns))
 #print("Total number of Byzantine Quorums: {}".format(temp))
 #print("Log base 10 of above: {}".format(log(temp, 10)))
 #print("Total number of LLMQs: {}".format(numb))
