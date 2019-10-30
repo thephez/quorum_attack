@@ -57,3 +57,9 @@ for x in range(qmaj, qsz+1):
 #print("Total number of LLMQs: {}".format(numb))
 #print("Log base 10 of above: {}".format(log(numb, 10)))
 
+probability = 10 ** (log(temp, 10)-log(numb, 10))
+if probability < 1:
+    print("Probabilty of malicious ChainLock with {} out of {} Byzantine nodes: {}".format(attacking_nodes, mns, 10 ** (log(temp, 10)-log(numb, 10))))
+else:
+    print("Probability of malicious ChainLock 100% for all values > {}".format(i))
+
