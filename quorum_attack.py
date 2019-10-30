@@ -28,22 +28,22 @@ qsz=400
 #Number of nodes in a LLMQ needed for a ChainLock
 qmaj=240
 
-print("Assume {} masternodes in total".format(mns))
+#print("Assume {} masternodes in total".format(mns))
 print("The number of masternodes in a quorum: {}".format(qsz))
 
 numb = binom(mns, qsz)
-print("Total number of LLMQs: {}".format(numb))
+#print("Total number of LLMQs: {}".format(numb))
 
 #Number of attacking nodes
 y = 400
 
-print("Assume {} of MNs are Byzantine".format(y))
+#print("Assume {} of MNs are Byzantine".format(y))
 temp = 0
 temp2 = 0
 
 for x in range(qmaj, qsz+1):
-    print("\nNumber of LLMQs with {} Byzantine nodes:".format(x))
     temp = temp + binom(y, x) * binom(mns-y, qsz -x)
+    #print("\nNumber of LLMQs with {} Byzantine nodes:".format(x))
     #temp2 = temp2 + binom_orig(y, x) * binom_orig(mns-y, qsz -x)
     #if temp != temp2:
     #    print("!!!!!!!!!!!!!!!! ERRROR !!!!!!!!!!!!!!!!!!!!!!!!")
@@ -51,9 +51,9 @@ for x in range(qmaj, qsz+1):
     #print("\tB: {}".format(binom(y, x) * binom(mns-y, qsz-x)))
     #print("\n\ttemp: {}".format(temp))
 
-print("Total number of Byzantine Quorums: {}".format(temp))
-print("Log base 10 of above: {}".format(log(temp, 10)))
-print("Total number of LLMQs: {}".format(numb))
-print("Log base 10 of above: {}".format(log(numb, 10)))
-print("Probabilty of malicious ChainLock: {}".format(10 ** (log(temp, 10)-log(numb, 10))))
+#print("{} malicious MNs (out of {} total MNs)".format(i, mns))
+#print("Total number of Byzantine Quorums: {}".format(temp))
+#print("Log base 10 of above: {}".format(log(temp, 10)))
+#print("Total number of LLMQs: {}".format(numb))
+#print("Log base 10 of above: {}".format(log(numb, 10)))
 
