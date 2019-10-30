@@ -24,7 +24,7 @@ def binom(x, y):
 #Total number of masternodes
 mns=5000
 #Quorum size used for ChainLocks
-qsz=500
+qsz=400
 #Number of nodes in a LLMQ needed for a ChainLock
 qmaj=240
 
